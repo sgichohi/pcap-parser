@@ -95,6 +95,7 @@ Use -e to force the encoding used for the HTTP bodies:
 parse_pcap -i192.168.109.91 -p80 -vv -eutf-8 test.pcap
 ```
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### JSON output
 Use -j to have JSON output
 In this mode, binary data is also represented as base64
@@ -144,5 +145,7 @@ In this mode, binary data is also represented as base64
 
 
 
+=======
+>>>>>>> parent of 69061f4... Added dstillery changes
 =======
 >>>>>>> parent of 69061f4... Added dstillery changes
