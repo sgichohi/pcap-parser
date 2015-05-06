@@ -8,11 +8,11 @@ This module parses pcap/pcapng files, retrieves HTTP data, and shows as text.
 Pcap files can be obtained via tcpdump or wireshark or other network traffic capture tools.
 
 Features:
+
 * HTTP requests/responses grouped by TCP connections; the requests in one keep-alive http connection will display together.
 * Managed chunked and compressed HTTP requests/responses.
 * Managed character encoding
 * Format JSON content in a beautiful way.
-* Output content in JSON
 
 ### Install
 This module can be installed via pip:
@@ -94,6 +94,7 @@ Use -e to force the encoding used for the HTTP bodies:
 ```sh
 parse_pcap -i192.168.109.91 -p80 -vv -eutf-8 test.pcap
 ```
+<<<<<<< HEAD
 ### JSON output
 Use -j to have JSON output
 In this mode, binary data is also represented as base64
@@ -143,3 +144,5 @@ In this mode, binary data is also represented as base64
 
 
 
+=======
+>>>>>>> parent of 69061f4... Added dstillery changes
