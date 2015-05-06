@@ -104,16 +104,16 @@ In this mode, binary data is also represented as base64
         "headers": {
             "accept-encoding": "gzip,deflate",
             "content-encoding": "",
-            "host": "amb210.mb.pl.pvt:8080",
+            "host": "yes.com:8080",
             "accept": "application/json, application/*+json",
             "user-agent": "Apache-HttpClient/4.3 (java 1.5)",
             "connection": "Keep-Alive",
             "date": "1430407068470",
             "content-type": "",
-            "authorization": "senthil@dstillery.com:PMCnBp+5JOXNFrvAzAlL5+1D0+Y="
+            "authorization": "foo@bar.com:PMCnBp+5JOXNFrvAzAlL5+1D0+Y="
         },
         "method": "GET",
-        "uri": "/openbar-api/v2/users/10/permissions/bartender?action=administer&instance=x"
+        "uri": "/you-api/v4/users/permissions/notender?action=administer&instance=x"
     },
     "response": {
         "status": 200,
@@ -127,11 +127,11 @@ In this mode, binary data is also represented as base64
             "content-type": "application/json;charset=UTF-8"
         },
         "body": {
-            "permissions": [
+            "stuff": [
                 {
                     "action": "administer",
                     "instance": "x",
-                    "domain": "bartender",
+                    "domain": "notender",
                     "parameters": {
                         "administer": true
                     }
