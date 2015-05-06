@@ -8,11 +8,11 @@ This module parses pcap/pcapng files, retrieves HTTP data, and shows as text.
 Pcap files can be obtained via tcpdump or wireshark or other network traffic capture tools.
 
 Features:
-
 * HTTP requests/responses grouped by TCP connections; the requests in one keep-alive http connection will display together.
 * Managed chunked and compressed HTTP requests/responses.
 * Managed character encoding
 * Format JSON content in a beautiful way.
+* Output content in JSON
 
 ### Install
 This module can be installed via pip:
@@ -94,3 +94,52 @@ Use -e to force the encoding used for the HTTP bodies:
 ```sh
 parse_pcap -i192.168.109.91 -p80 -vv -eutf-8 test.pcap
 ```
+### JSON output
+Use -j to have JSON output
+In this mode, binary data is also represented as base64
+```json 
+{
+    "request": {
+        "body": null,
+        "headers": {
+            "accept-encoding": "gzip,deflate",
+            "content-encoding": "",
+            "host": "amb210.mb.pl.pvt:8080",
+            "accept": "application/json, application/*+json",
+            "user-agent": "Apache-HttpClient/4.3 (java 1.5)",
+            "connection": "Keep-Alive",
+            "date": "1430407068470",
+            "content-type": "",
+            "authorization": "senthil@dstillery.com:PMCnBp+5JOXNFrvAzAlL5+1D0+Y="
+        },
+        "method": "GET",
+        "uri": "/openbar-api/v2/users/10/permissions/bartender?action=administer&instance=x"
+    },
+    "response": {
+        "status": 200,
+        "headers": {
+            "content-encoding": "gzip",
+            "transfer-encoding": "chunked",
+            "vary": "Accept-Encoding",
+            "server": "Apache-Coyote/1.1",
+            "connection": "",
+            "date": "Thu, 30 Apr 2015 15:17:48 GMT",
+            "content-type": "application/json;charset=UTF-8"
+        },
+        "body": {
+            "permissions": [
+                {
+                    "action": "administer",
+                    "instance": "x",
+                    "domain": "bartender",
+                    "parameters": {
+                        "administer": true
+                    }
+                }
+            ]
+        }
+    }
+} ```
+
+
+
